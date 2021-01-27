@@ -1,7 +1,7 @@
 import prettier from "prettier";
 import * as ts from "@fal-works/ts-transpile-modules";
-import * as rollup from "./tools/rollup.js";
-import * as esbuild from "./tools/esbuild.js";
+import * as rollup from "./use-config/rollup.js";
+import * as esbuild from "./use-config/esbuild.js";
 import { dirs, filepaths } from "./config.js";
 import { writeFile } from "./util/fs.js";
 

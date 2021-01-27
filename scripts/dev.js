@@ -1,20 +1,11 @@
-import * as esbuild from "./tools/esbuild.js";
-
-import { dirs } from "./config.js";
 import * as chokidarIncremental from "@fal-works/chokidar-incremental";
 
-const build = async () => {
-  const bundle = await esbuild.bundleIncremental();
-  const minify = await esbuild.minifyIncremental();
-
-  return {
-    rebundle: bundle.rebuild,
-    reminify: minify.rebuild,
-  };
-};
+import { dirs } from "./config.js";
+import * as esbuild from "./use-config/esbuild.js";
 
 const onStart = async () => {
-  const { rebundle, reminify } = await build();
+  const rebundle = (await esbuild.bundleIncremental()).rebuild;
+  const reminify = (await esbuild.minifyIncremental()).rebuild;
 
   const onChange = () => rebundle().then(reminify);
   const onExit = () => {
