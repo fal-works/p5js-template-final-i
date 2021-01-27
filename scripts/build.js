@@ -31,5 +31,3 @@ const run = async () => {
 };
 
 run();
-
-// use esbuild for building node module
