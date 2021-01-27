@@ -26,6 +26,6 @@ export const banner = `/**
  * @license ${license}
  */
 `;
-export const bannerMin = `/** @copyright 2021 FAL - https://www.fal-works.com/ */`;
+export const bannerMin = `/** This is my p5.js sketch. */`;
 export const external = ["p5"];
 export const globals = { p5: "p5" };
