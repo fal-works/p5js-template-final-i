@@ -1,9 +1,11 @@
 import prettier from "prettier";
 import * as ts from "@fal-works/ts-transpile-modules";
-import * as rollup from "./use-config/rollup.js";
-import * as esbuild from "./use-config/esbuild.js";
-import { dirs, filepaths } from "./config.js";
-import { writeFile } from "./util/fs.js";
+import * as rollup from "rollup";
+import esbuild from "esbuild";
+import { printWarn } from "../tools/esbuild.js";
+import { dirs, filepaths } from "../config.js";
+import { writeFile } from "../util/fs.js";
+import * as options from "./options/index.js";
 
 const formatDist = (code: string) => {
   const preFormatted = code.replace(/(.)(\n *\/\*\*)/gm, "$1\n$2");
@@ -17,14 +19,16 @@ const formatDist = (code: string) => {
  */
 const run = async () => {
   await ts.transpileModules(dirs.src, dirs.tsOut);
-  const bundleResult = await rollup.generate();
-  const bundleCode = bundleResult.output[0].code;
+  const built = await rollup.rollup(options.inputOptions);
+  const bundled = await built.generate(options.outputOptions);
+  const bundledCode = bundled.output[0].code;
 
   const writeDistMin = esbuild
-    .minifyCode(bundleCode)
+    .transform(bundledCode.replace("@license", ""), options.minifyCode)
+    .then(printWarn)
     .then(({ code }) => writeFile(filepaths.distMin, code));
 
-  const writeDist = writeFile(filepaths.dist, formatDist(bundleCode));
+  const writeDist = writeFile(filepaths.dist, formatDist(bundledCode));
 
   await Promise.all([writeDist, writeDistMin]);
 

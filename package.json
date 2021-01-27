@@ -19,8 +19,8 @@
   },
   "private": true,
   "scripts": {
-    "build": "ts-sofort scripts/build.ts",
-    "dev": "ts-sofort scripts/dev.ts",
+    "build": "ts-sofort scripts/build/main.ts",
+    "dev": "ts-sofort scripts/dev/main.ts",
     "lint": "eslint src/"
   }
 }
