@@ -35,7 +35,7 @@ export const minifyIncremental = async () => {
  * @param {string} code
  */
 export const minifyCode = async (code) => {
-  code = code.replace("@license", "");
+  code = code.replace("@license", ""); // replace current banner with bannerMin
   const out = await esbuild.transform(code, {
     minify: true,
     banner: bannerMin,
