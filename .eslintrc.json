@@ -29,6 +29,7 @@
       "files": ["src/**/*.ts"],
       "plugins": ["@typescript-eslint"],
       "parser": "@typescript-eslint/parser",
+      "parserOptions": { "project": "tsconfig.json" },
       "env": {
         "browser": true
       },
@@ -36,12 +37,15 @@
         // recommended rules for TypeScript
         "plugin:@typescript-eslint/recommended",
 
+        // additional rules for TypeScript
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+
         // turn off rules of @typescript-eslint that might conflict with Prettier
         "prettier/@typescript-eslint"
       ],
       "rules": {
         "no-fallthrough": "off", // already checked by TypeScript
-        "@typescript-eslint/no-explicit-any": "off" // this rule is a little too strict if using p5.js
+        "@typescript-eslint/no-explicit-any": ["warn", { "fixToUnknown": true }]
       }
     },
 

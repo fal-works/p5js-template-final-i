@@ -18,6 +18,7 @@
   "private": true,
   "scripts": {
     "build": "node scripts/build.js",
-    "dev": "node scripts/dev.js"
+    "dev": "node scripts/dev.js",
+    "lint": "eslint src/"
   }
 }
