@@ -4,7 +4,7 @@ import { globalExternals } from "@fal-works/esbuild-plugin-global-externals";
 import { filepaths, globals, bannerMin } from "../config.js";
 
 /** @param {any} message */
-const warn = (message) => console.warn(message);
+const warn = (message: unknown) => console.warn(message);
 
 export const bundleIncremental = async () => {
   const out = await esbuild.build({
@@ -34,7 +34,7 @@ export const minifyIncremental = async () => {
 /**
  * @param {string} code
  */
-export const minifyCode = async (code) => {
+export const minifyCode = async (code: string) => {
   code = code.replace("@license", ""); // replace current banner with bannerMin
   const out = await esbuild.transform(code, {
     minify: true,

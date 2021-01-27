@@ -16,8 +16,4 @@ const onStart = async () => {
   return { onChange, onExit };
 };
 
-const start = async () => {
-  chokidarIncremental.watch(`${dirs.src}/**/*.ts`, onStart, {});
-};
-
-start();
+void chokidarIncremental.watch(`${dirs.src}/**/*.ts`, onStart, {});

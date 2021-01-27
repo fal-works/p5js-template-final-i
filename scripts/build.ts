@@ -5,8 +5,7 @@ import * as esbuild from "./use-config/esbuild.js";
 import { dirs, filepaths } from "./config.js";
 import { writeFile } from "./util/fs.js";
 
-/** @param {string} code */
-const formatDist = (code) => {
+const formatDist = (code: string) => {
   const preFormatted = code.replace(/(.)(\n *\/\*\*)/gm, "$1\n$2");
   return prettier.format(preFormatted, { filepath: filepaths.dist });
 };
@@ -27,7 +26,9 @@ const run = async () => {
 
   const writeDist = writeFile(filepaths.dist, formatDist(bundleCode));
 
-  return Promise.all([writeDist, writeDistMin]);
+  await Promise.all([writeDist, writeDistMin]);
+
+  console.log("build complete.");
 };
 
-run();
+void run();

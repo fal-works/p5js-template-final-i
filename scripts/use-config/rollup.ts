@@ -3,15 +3,13 @@
 import * as rollup from "rollup";
 import { filepaths, banner, external, globals } from "../config.js";
 
-/** @type {rollup.InputOptions} */
-const inputOptions = {
+const inputOptions: rollup.InputOptions = {
   input: filepaths.bundleInput,
   external,
   plugins: [],
 };
 
-/** @type {rollup.OutputOptions} */
-const outputOptions = {
+const outputOptions: rollup.OutputOptions = {
   format: "iife",
   banner,
   globals,
