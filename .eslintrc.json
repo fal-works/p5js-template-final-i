@@ -1,7 +1,7 @@
 // see also: https://eslint.org/docs/user-guide/configuring
 
 {
-  "ignorePatterns": ["/tsc-out/", "/dist/"],
+  "ignorePatterns": ["/ts-out/", "/dist/"],
 
   // config common to all
   "env": {
@@ -11,7 +11,7 @@
   "overrides": [
     // config with basic rules
     {
-      "files": ["src/**/*.ts", "rollup.config.js"],
+      "files": ["src/**/*.ts", "scripts/**/*.js"],
       "parserOptions": {
         "sourceType": "module"
       },
@@ -45,12 +45,15 @@
       }
     },
 
-    // config for Rollup
+    // config for own scripts
     {
-      "files": ["rollup.config.js"],
+      "files": ["scripts/**/*.js"],
       "env": {
         "es2017": true,
         "node": true
+      },
+      "parserOptions": {
+        "ecmaVersion": 2019
       }
     },
 

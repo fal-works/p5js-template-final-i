@@ -1,13 +1,13 @@
-// See also: https://aka.ms/tsconfig.json
+// https://aka.ms/tsconfig.json
 {
-  "include": ["src/"],
+  "include": ["**/*.js"],
 
   "compilerOptions": {
     /* Basic Options */
-    "target": "ES2015",
-    "module": "ESNext",
-    "outDir": "ts-out",
-    "isolatedModules": true,
+    "target": "ES2019",
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
 
     /* Strict Type-Checking Options */
     "strict": true,
@@ -18,12 +18,11 @@
     "noUncheckedIndexedAccess": true,
 
     /* Module Resolution Options */
-    "types": [],
+    "types": ["node"],
     "esModuleInterop": true,
+    "moduleResolution": "node",
 
     /* Advanced Options */
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmitOnError": true
+    "skipLibCheck": true
   }
 }
