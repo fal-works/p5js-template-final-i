@@ -6,6 +6,7 @@
     "@fal-works/ts-transpile-modules": "^0.1.2",
     "@types/node": "^14.14.22",
     "@types/p5": "^0.9.1",
+    "@types/prettier": "^2.1.6",
     "@typescript-eslint/eslint-plugin": "4.14.1",
     "@typescript-eslint/parser": "^4.14.1",
     "esbuild": "^0.8.36",

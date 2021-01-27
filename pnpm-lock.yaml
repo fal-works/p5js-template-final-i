@@ -1,3 +1,5 @@
+dependencies:
+  '@types/prettier': 2.1.6
 devDependencies:
   '@fal-works/chokidar-incremental': 0.1.1
   '@fal-works/esbuild-plugin-global-externals': 0.1.0
@@ -113,6 +115,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-4glOKdqdBiRWDFZwi/MjHudPV2U4t2L4fTTSacGapfFxyNXzZcAshAjqmrJkCIZcFlhRBEAL7AM95xRDMfrIwg==
+  /@types/prettier/2.1.6:
+    dev: false
+    resolution:
+      integrity: sha512-6gOkRe7OIioWAXfnO/2lFiv+SJichKVSys1mSsgyrYHSEjk8Ctv4tSR/Odvnu+HWlH2C8j53dahU03XmQdd5fA==
   /@typescript-eslint/eslint-plugin/4.14.1_5aaa83948f53bc6d11a4ce27d9931983:
     dependencies:
       '@typescript-eslint/experimental-utils': 4.14.1_eslint@7.18.0+typescript@4.1.3
@@ -1221,6 +1227,7 @@ specifiers:
   '@fal-works/ts-transpile-modules': ^0.1.2
   '@types/node': ^14.14.22
   '@types/p5': ^0.9.1
+  '@types/prettier': ^2.1.6
   '@typescript-eslint/eslint-plugin': 4.14.1
   '@typescript-eslint/parser': ^4.14.1
   esbuild: ^0.8.36
