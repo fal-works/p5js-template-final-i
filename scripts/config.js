@@ -6,16 +6,7 @@ export const dirs = {
 
 export const filenames = {
   srcEntry: "main.ts",
-  bundleInput: "main.js",
   dist: "script.js",
-  distMin: "script.min.js",
-};
-
-export const filepaths = {
-  srcEntry: `${dirs.src}/${filenames.srcEntry}`,
-  bundleInput: `${dirs.tsOut}/${filenames.bundleInput}`,
-  dist: `${dirs.dist}/${filenames.dist}`,
-  distMin: `${dirs.dist}/${filenames.distMin}`,
 };
 
 const license = "CC0-1.0";
@@ -27,5 +18,18 @@ export const banner = `/**
  */
 `;
 export const bannerMin = `/** This is my p5.js sketch. */`;
+
 export const external = ["p5"];
 export const globals = { p5: "p5" };
+
+// ----
+
+export const filepaths = {
+  srcEntry: `${dirs.src}/${filenames.srcEntry}`,
+  bundleInput: `${dirs.tsOut}/${filenames.srcEntry.replace(
+    /\.ts(x?)$/,
+    ".js$1"
+  )}`,
+  dist: `${dirs.dist}/${filenames.dist}`,
+  distMin: `${dirs.dist}/${filenames.dist.replace(/\.js$/, ".min.js")}`,
+};
