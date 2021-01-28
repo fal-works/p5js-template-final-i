@@ -6,7 +6,6 @@
   "compilerOptions": {
     /* Basic Options */
     "target": "ES2015",
-    "module": "ESNext",
-    "outDir": "ts-out"
+    "module": "ESNext"
   }
 }

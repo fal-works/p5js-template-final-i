@@ -1,18 +1,12 @@
 devDependencies:
-  '@fal-works/chokidar-incremental': 0.2.0
-  '@fal-works/esbuild-plugin-global-externals': 0.1.0
-  '@fal-works/ts-transpile-modules': 0.1.2
-  '@types/node': 14.14.22
+  '@fal-works/ts-build-helper': 0.1.0
   '@types/p5': 0.9.1
-  '@types/prettier': 2.1.6
   '@typescript-eslint/eslint-plugin': 4.14.1_5aaa83948f53bc6d11a4ce27d9931983
   '@typescript-eslint/parser': 4.14.1_eslint@7.18.0+typescript@4.1.3
-  esbuild: 0.8.36
   eslint: 7.18.0
   eslint-config-prettier: 7.2.0_eslint@7.18.0
   prettier: 2.2.1
-  rollup: 2.38.0
-  ts-sofort: 0.1.0
+  ts-sofort: 0.2.0
   typescript: 4.1.3
 lockfileVersion: 5.2
 packages:
@@ -51,30 +45,40 @@ packages:
       node: ^10.12.0 || >=12.0.0
     resolution:
       integrity: sha512-1JTKgrOKAHVivSvOYw+sJOunkBjUOvjqWk1DPja7ZFhIS2mX/4EgTT8M7eTK9jrKhL/FvXXEbQwIs3pg1xp3dg==
-  /@fal-works/chokidar-incremental/0.2.0:
+  /@fal-works/chokidar-incremental/0.3.0:
     dependencies:
       chokidar: 3.5.1
     dev: true
     resolution:
-      integrity: sha512-AOTG1ZdO0vbL8f+dj1B8rHi1b+7SWKv0z4hwVfbZO5ptN+8Y5LrWpP2O5PryianF+5LuhIP18HeDUvfaeytDHw==
+      integrity: sha512-KrBaxygNadChZnMXwAUoySZXn0KNujWi4ei96MEbMDlhoHMg9kHMLzW5gE4mBj48Gyfd5nPlMHkqnqTkydlSsw==
   /@fal-works/deep-freeze/0.1.0:
     dev: true
     resolution:
       integrity: sha512-qZ3EIwfEZzFM1gK8E2iepmmhnZdfYZPC/Xwh1siI4WSYwRCuAGYYN/pWzKsbEiW9BHZWLF65SlJFmO/28ukYtw==
-  /@fal-works/esbuild-plugin-global-externals/0.1.0:
+  /@fal-works/esbuild-plugin-global-externals/1.0.0:
     dependencies:
       esbuild: 0.8.36
-      fast-glob: 3.2.5
     dev: true
     resolution:
-      integrity: sha512-GM89cILg1SltKqG803UwtFNA9KvdIxHsBz7dekXy1w/XZE4vP9dNlfCbj1Co7zrPgneYMO7voSMpRfACdPaGzA==
+      integrity: sha512-cVonXQcmHalYcW35AE58V1InVeiiEpdChHSO0GFRkABJg9+gTlSvH6uskZkCU7Q4Hvn2+kqSzwhPv/usvgV21Q==
   /@fal-works/esbuild-plugin-regexp-externals/0.1.0:
     dependencies:
       esbuild: 0.8.36
     dev: true
     resolution:
       integrity: sha512-pWLgdFGkx38qqhTNWKiXmRQOePzFLdsLhJZf9bTGhGHGOxCxpaOr8h4dtVyDlhK/RCWfJFMOjvGh2JD/hXcPxw==
-  /@fal-works/ts-transpile-modules/0.1.2:
+  /@fal-works/ts-build-helper/0.1.0:
+    dependencies:
+      '@fal-works/chokidar-incremental': 0.3.0
+      '@fal-works/esbuild-plugin-global-externals': 1.0.0
+      '@fal-works/ts-transpile-modules': 0.1.3
+      esbuild: 0.8.36
+      prettier: 2.2.1
+      rollup: 2.38.1
+    dev: true
+    resolution:
+      integrity: sha512-7nDt0OYm6ljh4PoTcavpW2yZIzOoHGzGGAVzLxCRvU2lQT6TTp1KNkH1lw5geEtc32hhqxG/og5yccVL6TElbQ==
+  /@fal-works/ts-transpile-modules/0.1.3:
     dependencies:
       '@fal-works/deep-freeze': 0.1.0
       deepcopy: 2.1.0
@@ -84,7 +88,7 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-j2RJnLqrzdr1G5IS4NISMFwaY2fEArvgeZk0zari/9jP0NxZukGx2Or5ZXVQ72vSWihh42Ujelkj9FvE4iFIJg==
+      integrity: sha512-CnHgjqIwq/GqXHMTXd3nbNX/i5YSNbyAdxHqVyw993V8FdgV5Dnh/+82+Mv859Ma85Rhgz6wOgcN7OXw9XkQ0g==
   /@nodelib/fs.scandir/2.1.4:
     dependencies:
       '@nodelib/fs.stat': 2.0.4
@@ -103,7 +107,7 @@ packages:
   /@nodelib/fs.walk/1.2.6:
     dependencies:
       '@nodelib/fs.scandir': 2.1.4
-      fastq: 1.10.0
+      fastq: 1.10.1
     dev: true
     engines:
       node: '>= 8'
@@ -113,18 +117,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-cxWFQVseBm6O9Gbw1IWb8r6OS4OhSt3hPZLkFApLjM8TEXROBuQGLAH2i2gZpcXdLBIrpXuTDhH7Vbm1iXmNGA==
-  /@types/node/14.14.22:
-    dev: true
-    resolution:
-      integrity: sha512-g+f/qj/cNcqKkc3tFqlXOYjrmZA+jNBiDzbP3kH+B+otKFqAdPgVTGP1IeKRdMml/aE69as5S4FqtxAbl+LaMw==
   /@types/p5/0.9.1:
     dev: true
     resolution:
       integrity: sha512-4glOKdqdBiRWDFZwi/MjHudPV2U4t2L4fTTSacGapfFxyNXzZcAshAjqmrJkCIZcFlhRBEAL7AM95xRDMfrIwg==
-  /@types/prettier/2.1.6:
-    dev: true
-    resolution:
-      integrity: sha512-6gOkRe7OIioWAXfnO/2lFiv+SJichKVSys1mSsgyrYHSEjk8Ctv4tSR/Odvnu+HWlH2C8j53dahU03XmQdd5fA==
   /@typescript-eslint/eslint-plugin/4.14.1_5aaa83948f53bc6d11a4ce27d9931983:
     dependencies:
       '@typescript-eslint/experimental-utils': 4.14.1_eslint@7.18.0+typescript@4.1.3
@@ -643,12 +639,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
-  /fastq/1.10.0:
+  /fastq/1.10.1:
     dependencies:
       reusify: 1.0.4
     dev: true
     resolution:
-      integrity: sha512-NL2Qc5L3iQEsyYzweq7qfgy5OtXCmGzGvhElGEd/SoFWEMOEczNh5s5ocaF01HDetxz+p8ecjNPA6cZxxIHmzA==
+      integrity: sha512-AWuv6Ery3pM+dY7LYS8YIaCiQvUaos9OB1RyNgaOWnaX+Tik7Onvcsf8x8c+YtDeT0maYLniBip2hox5KtEXXA==
   /file-entry-cache/6.0.0:
     dependencies:
       flat-cache: 3.0.4
@@ -1033,7 +1029,7 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
-  /rollup/2.38.0:
+  /rollup/2.38.1:
     dev: true
     engines:
       node: '>=10.0.0'
@@ -1041,7 +1037,7 @@ packages:
     optionalDependencies:
       fsevents: 2.1.3
     resolution:
-      integrity: sha512-ay9zDiNitZK/LNE/EM2+v5CZ7drkB2xyDljvb1fQJCGnq43ZWRkhxN145oV8GmoW1YNi4sA/1Jdkr2LfawJoXw==
+      integrity: sha512-q07T6vU/V1kqM8rGRRyCgEvIQcIAXoKIE5CpkYAlHhfiWM1Iuh4dIPWpIbqFngCK6lwAB2aYHiUVhIbSWHQWhw==
   /run-parallel/1.1.10:
     dev: true
     resolution:
@@ -1152,14 +1148,14 @@ packages:
       node: '>=8.0'
     resolution:
       integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==
-  /ts-sofort/0.1.0:
+  /ts-sofort/0.2.0:
     dependencies:
       '@fal-works/esbuild-plugin-regexp-externals': 0.1.0
       esbuild: 0.8.36
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-pi0aA8WVIC8YDx/1oVHmC+zqliaI3iTGCtFCVew/hn0o9KtysxZxCth1kkvJqXD1mpsQ8s+BckwUUXwGyoIGUw==
+      integrity: sha512-dEDhV3khCka6xF52l3sJCCLLfgYKyOmpWkjpDeUHpAeLwRn4k0UbzOq/p3PBQVDxdjX9kiOmsltHsUMgAwCC/Q==
   /tslib/1.14.1:
     dev: true
     resolution:
@@ -1236,18 +1232,12 @@ packages:
     resolution:
       integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
 specifiers:
-  '@fal-works/chokidar-incremental': ^0.2.0
-  '@fal-works/esbuild-plugin-global-externals': ^0.1.0
-  '@fal-works/ts-transpile-modules': ^0.1.2
-  '@types/node': ^14.14.22
+  '@fal-works/ts-build-helper': ^0.1.0
   '@types/p5': ^0.9.1
-  '@types/prettier': ^2.1.6
   '@typescript-eslint/eslint-plugin': 4.14.1
   '@typescript-eslint/parser': ^4.14.1
-  esbuild: ^0.8.36
   eslint: 7.18.0
   eslint-config-prettier: ^7.2.0
   prettier: ^2.2.1
-  rollup: ^2.38.0
-  ts-sofort: ^0.1.0
+  ts-sofort: ^0.2.0
   typescript: ^4.1.3
