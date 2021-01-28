@@ -1,6 +1,5 @@
-import type { Paths } from "@fal-works/ts-build-helper";
-
-export const paths: Paths = {
+/** @type {Paths} */
+const paths = {
   dirs: {
     src: "src",
     tsOut: "ts-out",
@@ -11,3 +10,7 @@ export const paths: Paths = {
     dist: "script.js",
   },
 };
+
+export default paths;
+
+/** @typedef {import("@fal-works/ts-build-helper").Paths} Paths */
