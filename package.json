@@ -1,7 +1,7 @@
 {
   "license": "CC0-1.0",
   "devDependencies": {
-    "@fal-works/ts-build-helper": "C:\\Dev\\creative-coding\\js-libraries\\ts-build-helper",
+    "@fal-works/ts-build-helper": "^0.1.1",
     "@types/p5": "^0.9.1",
     "@typescript-eslint/eslint-plugin": "4.14.1",
     "@typescript-eslint/parser": "^4.14.1",
