@@ -1,5 +1,6 @@
 {
   "license": "CC0-1.0",
+  "type": "module",
   "devDependencies": {
     "@fal-works/ts-build-helper": "^0.1.1",
     "@types/p5": "^0.9.1",
@@ -11,7 +12,6 @@
     "prettier": "^2.2.1",
     "typescript": "^4.1.3"
   },
-  "type": "module",
   "private": true,
   "scripts": {
     "build": "hldit scripts/commands/build.js",
