@@ -7,14 +7,15 @@
     "@typescript-eslint/parser": "^4.14.1",
     "eslint": "7.18.0",
     "eslint-config-prettier": "^7.2.0",
+    "howlongdidittake": "^0.1.0",
     "prettier": "^2.2.1",
     "typescript": "^4.1.3"
   },
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "node scripts/commands/build.js",
-    "watch": "node scripts/commands/watch.js",
+    "build": "hldit scripts/commands/build.js",
+    "watch": "node  scripts/commands/watch.js",
     "lint": "eslint src/"
   }
 }

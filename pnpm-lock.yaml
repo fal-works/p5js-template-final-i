@@ -5,6 +5,7 @@ devDependencies:
   '@typescript-eslint/parser': 4.14.1_eslint@7.18.0+typescript@4.1.3
   eslint: 7.18.0
   eslint-config-prettier: 7.2.0_eslint@7.18.0
+  howlongdidittake: 0.1.0
   prettier: 2.2.1
   typescript: 4.1.3
 lockfileVersion: 5.2
@@ -746,6 +747,11 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==
+  /howlongdidittake/0.1.0:
+    dev: true
+    hasBin: true
+    resolution:
+      integrity: sha512-fzAIpCbYeGyFb2AMRjUsGizKqhclmhSjPwpRzLHLhrmciLzwtIWWBzhKw/rHTrLNVhzTiTdw0RowwDqbnaJsQg==
   /ignore/4.0.6:
     dev: true
     engines:
@@ -1223,5 +1229,6 @@ specifiers:
   '@typescript-eslint/parser': ^4.14.1
   eslint: 7.18.0
   eslint-config-prettier: ^7.2.0
+  howlongdidittake: ^0.1.0
   prettier: ^2.2.1
   typescript: ^4.1.3
