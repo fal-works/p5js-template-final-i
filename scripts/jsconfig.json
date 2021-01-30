@@ -6,7 +6,6 @@
   "compilerOptions": {
     /* Basic Options */
     "target": "ES2020",
-    "allowJs": true,
     "checkJs": true,
 
     /* Module Resolution Options */
