@@ -1,3 +1,5 @@
+import type { Config } from "@fal-works/ts-build-helper";
+
 const license = "CC0-1.0";
 
 const banner = `/**
@@ -13,8 +15,7 @@ const globals = { p5: "p5" };
 
 // ----------------------------------------------------------------------------
 
-/** @type {Config} */
-const config = {
+const config: Config = {
   external,
   globals,
   banner,
@@ -22,5 +23,3 @@ const config = {
 };
 
 export default config;
-
-/** @typedef {import("@fal-works/ts-build-helper").Config} Config */

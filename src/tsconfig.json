@@ -1,14 +1,14 @@
 // https://aka.ms/tsconfig.json
 {
-  "include": ["**/*.js"],
+  "include": ["**/*.ts"],
   "extends": "../tsconfig.base.json",
 
   "compilerOptions": {
     /* Basic Options */
-    "target": "ES2020",
-    "checkJs": true,
+    "target": "ES2015",
+    "module": "ESNext",
 
     /* Module Resolution Options */
-    "moduleResolution": "node"
+    "types": ["p5"]
   }
 }

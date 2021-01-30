@@ -1,21 +1,22 @@
 {
   "license": "CC0-1.0",
-  "type": "module",
   "devDependencies": {
     "@fal-works/ts-build-helper": "^0.1.1",
+    "@types/eslint": "^7.2.6",
+    "@types/node": "^14.14.22",
     "@types/p5": "^0.9.1",
     "@typescript-eslint/eslint-plugin": "4.14.1",
     "@typescript-eslint/parser": "^4.14.1",
     "eslint": "7.18.0",
     "eslint-config-prettier": "^7.2.0",
-    "howlongdidittake": "^0.1.0",
     "prettier": "^2.2.1",
+    "ts-sofort": "^0.3.0",
     "typescript": "^4.1.3"
   },
   "private": true,
   "scripts": {
-    "build": "hldit scripts/commands/build.js",
-    "watch": "node  scripts/commands/watch.js",
+    "build": "ts-sofort scripts/commands/build.ts",
+    "watch": "ts-sofort scripts/commands/watch.ts",
     "lint": "eslint src/"
   }
 }

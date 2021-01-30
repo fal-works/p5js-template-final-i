@@ -11,6 +11,6 @@ const paths = {
   },
 };
 
-export default paths;
+module.exports = paths;
 
 /** @typedef {import("@fal-works/ts-build-helper").Paths} Paths */

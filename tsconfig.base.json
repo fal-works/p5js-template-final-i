@@ -1,4 +1,4 @@
-// See also: https://aka.ms/tsconfig.json
+// https://aka.ms/tsconfig.json
 {
   "include": [],
 
@@ -17,6 +17,7 @@
 
     /* Module Resolution Options */
     "esModuleInterop": true,
+    "moduleResolution": "node",
 
     /* Advanced Options */
     "skipLibCheck": true,
