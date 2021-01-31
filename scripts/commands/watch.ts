@@ -1,5 +1,5 @@
-import * as watch from "@fal-works/ts-build-helper/lib/watch/index.js";
-import paths from "../../paths";
-import config from "../bundle-config";
+import { watch } from "@fal-works/ts-build-helper";
+import paths from "../../paths.js";
+import config from "../bundle-config.js";
 
 void watch.run(paths, config);
