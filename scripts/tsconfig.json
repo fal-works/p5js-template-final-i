@@ -7,9 +7,6 @@
     /* Basic Options */
     "target": "ES2020",
     "lib": ["ES2020"],
-    "checkJs": true,
-
-    /* Module Resolution Options */
-    "types": ["node"]
+    "checkJs": true
   }
 }
