@@ -1,16 +1,32 @@
+const { dirs } = require("./paths.js");
+const pattern = {
+  src: `${dirs.src}/**/*.ts`,
+  scripts: `${dirs.scripts}/**/*.ts`,
+  paths: "paths.js",
+  eslintrc: ".eslintrc.js",
+};
+const patterns = (() => {
+  const src = [pattern.src];
+  const scripts = [pattern.scripts];
+  const lintedTs = [...src, ...scripts];
+  const node = [pattern.scripts, pattern.paths, pattern.eslintrc];
+  const lintedAll = [...lintedTs, ...node];
+  return { src, scripts, lintedTs, lintedAll, node };
+})();
+
+// ----------------------------------------------------------------------------
 // https://eslint.org/docs/user-guide/configuring
 
 /** @type {ESLintConfig} */
 const config = {
-  ignorePatterns: ["/ts-out/", "/dist/"],
+  ignorePatterns: [`/${dirs.tsOut}/`, `/${dirs.dist}/`],
 
-  // config common to all
-  env: {
-    es6: true,
-  },
+  // common to all
+  env: { es6: true },
+  parserOptions: { sourceType: "module" },
 
   overrides: [
-    // config for all JavaScript files
+    // all *.js files
     {
       files: ["**/*.js"],
       rules: {
@@ -28,33 +44,22 @@ const config = {
       },
     },
 
-    // config for all TypeScript files
+    // all *.ts files
     {
       files: ["**/*.ts"],
       plugins: ["@typescript-eslint"],
       parser: "@typescript-eslint/parser",
     },
 
-    // config with basic rules
+    // basic rules
     {
-      files: ["src/**/*.ts", "scripts/**/*.ts", "paths.js", ".eslintrc.js"],
+      files: patterns.lintedAll,
       extends: ["eslint:recommended", "prettier"],
     },
 
-    // config for cjs
+    // basic rules for *.ts
     {
-      files: ["paths.js", ".eslintrc.js"],
-      env: {
-        node: true,
-      },
-    },
-
-    // config with basic rules for TypeScript
-    {
-      files: ["src/**/*.ts", "scripts/**/*.ts"],
-      parserOptions: {
-        sourceType: "module",
-      },
+      files: patterns.lintedTs,
       extends: [
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
@@ -67,23 +72,22 @@ const config = {
         "@typescript-eslint/no-explicit-any": ["warn", { fixToUnknown: true }],
       },
     },
-
-    // config for source code in TypeScript
     {
-      files: ["src/**/*.ts"],
-      parserOptions: { project: "src/tsconfig.json" },
+      files: patterns.src,
+      parserOptions: { project: `${dirs.src}/tsconfig.json` },
+    },
+    {
+      files: patterns.scripts,
+      parserOptions: { project: `${dirs.scripts}/tsconfig.json` },
     },
 
-    // config for own scripts
+    // files for Node.js
     {
-      files: ["scripts/**/*.ts"],
-      parserOptions: {
-        project: "scripts/tsconfig.json",
-        ecmaVersion: 2020,
-      },
+      files: patterns.node,
       env: {
         es2017: true,
         es2020: true,
+        node: true,
       },
     },
   ],
