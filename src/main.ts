@@ -1,5 +1,5 @@
 import p5 from "p5";
-import { createSketch } from "./p5-util/sketch";
+import { createSketch } from "@fal-works/p5-inst";
 import { setup } from "./setup";
 import { draw } from "./draw";
 

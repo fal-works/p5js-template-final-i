@@ -1,5 +1,7 @@
 import type { Config } from "@fal-works/ts-build-helper";
 
+import { nodeResolve } from "@rollup/plugin-node-resolve";
+
 const license = "CC0-1.0";
 
 const banner = `/**
@@ -20,6 +22,9 @@ const config: Config = {
   globals,
   banner,
   bannerMin,
+  overrides: {
+    rollupInput: { plugins: [nodeResolve()] },
+  },
 };
 
 export default config;
