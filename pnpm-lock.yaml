@@ -5,6 +5,7 @@ devDependencies:
   '@typescript-eslint/parser': 4.14.1_eslint@7.19.0+typescript@4.1.3
   eslint: 7.19.0
   eslint-config-prettier: 7.2.0_eslint@7.19.0
+  eslint-plugin-total-functions: 4.7.2_eslint@7.19.0+typescript@4.1.3
   prettier: 2.2.1
   ts-sofort: 0.4.1
   typescript: 4.1.3
@@ -489,6 +490,20 @@ packages:
       eslint: '>=7.0.0'
     resolution:
       integrity: sha512-rV4Qu0C3nfJKPOAhFujFxB7RMP+URFyQqqOZW9DMRD7ZDTFyjaIlETU3xzHELt++4ugC0+Jm084HQYkkJe+Ivg==
+  /eslint-plugin-total-functions/4.7.2_eslint@7.19.0+typescript@4.1.3:
+    dependencies:
+      '@typescript-eslint/eslint-plugin': 4.14.1_c92627de29ddf8f42a4f4f9eaac8feea
+      '@typescript-eslint/experimental-utils': 4.14.1_eslint@7.19.0+typescript@4.1.3
+      '@typescript-eslint/parser': 4.14.1_eslint@7.19.0+typescript@4.1.3
+      eslint: 7.19.0
+      tsutils: 3.20.0_typescript@4.1.3
+      typescript: 4.1.3
+    dev: true
+    peerDependencies:
+      eslint: ^7.12.0
+      typescript: ^4.1.2
+    resolution:
+      integrity: sha512-NG0Is/W+l9vGMbo6wABGGw00Wl6VR0JdN99u28bTKfRzisxnRFJGR/i12jFgQqJHxPxGxC+lLxZ/E5NtwOjo+A==
   /eslint-scope/5.1.1:
     dependencies:
       esrecurse: 4.3.0
@@ -1239,6 +1254,7 @@ specifiers:
   '@typescript-eslint/parser': ^4.14.1
   eslint: 7.19.0
   eslint-config-prettier: ^7.2.0
+  eslint-plugin-total-functions: ^4.7.2
   prettier: ^2.2.1
   ts-sofort: ^0.4.1
   typescript: ^4.1.3

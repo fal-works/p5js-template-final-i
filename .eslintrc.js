@@ -60,9 +60,11 @@ const config = {
     // basic rules for *.ts
     {
       files: patterns.lintedTs,
+      plugins: ["total-functions"],
       extends: [
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:total-functions/recommended",
         "prettier/@typescript-eslint",
       ],
       rules: {
