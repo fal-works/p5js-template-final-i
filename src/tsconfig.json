@@ -6,9 +6,6 @@
   "compilerOptions": {
     /* Basic Options */
     "target": "ES2015",
-    "module": "ESNext",
-
-    /* Module Resolution Options */
-    "types": ["p5"]
+    "module": "ESNext"
   }
 }
